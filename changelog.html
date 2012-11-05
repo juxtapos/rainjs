@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Changelog &mdash; Rain 0.10.0 documentation</title>
+    <title>Changelog &mdash; Rain 0.18.0 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.10.0',
+        VERSION:     '0.18.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,8 +25,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Rain 0.10.0 documentation" href="index.html" />
-    <link rel="prev" title="View modes" href="proposals/Features-proposal-view-modes.html" /> 
+    <link rel="top" title="Rain 0.18.0 documentation" href="index.html" />
+    <link rel="prev" title="Distributed Websockets" href="proposals/distributed_websockets.html" /> 
   </head>
   <body>
     <div class="related">
@@ -36,9 +36,9 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="proposals/Features-proposal-view-modes.html" title="View modes"
+          <a href="proposals/distributed_websockets.html" title="Distributed Websockets"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Rain 0.10.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Rain 0.18.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -49,10 +49,77 @@
             
   <div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="v-0-18">
+<h2>v 0.18<a class="headerlink" href="#v-0-18" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Client-side component dependencies can be requested using the <tt class="docutils literal"><span class="pre">js/path/file_without_extension</span></tt>
+convention (example: <tt class="docutils literal"><span class="pre">js/file</span></tt>, <tt class="docutils literal"><span class="pre">js/lib/file</span></tt>). The previous way of requesting js files
+(<tt class="docutils literal"><span class="pre">/component/optional_version/js/file.js</span></tt>) still works but it&#8217;s not recommended.</li>
+<li>Removed the <tt class="docutils literal"><span class="pre">util</span></tt> shortcut from the RequireJS paths. In order to use the <tt class="docutils literal"><span class="pre">util</span></tt> library you
+should request it using <tt class="docutils literal"><span class="pre">raintime/lib/util</span></tt>.</li>
+<li>Fixed a bug where a component added to the page using <tt class="docutils literal"><span class="pre">context.insert</span></tt> could not be found.</li>
+</ul>
+</div>
+<div class="section" id="v-0-17">
+<h2>v 0.17<a class="headerlink" href="#v-0-17" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Added distributed rendering research.</li>
+<li>Added improved CSS rendering research.</li>
+<li>Improved the AsyncController methods and made all controllers inherit its methods.</li>
+</ul>
+</div>
+<div class="section" id="v-0-16">
+<h2>v 0.16<a class="headerlink" href="#v-0-16" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fixed CSS files not loading in IE8.</li>
+<li>Added logger implementation for components and for client side.</li>
+<li>Added code coverage support as additional Jake commands.</li>
+<li>Added distributed websockets proposal.</li>
+</ul>
+</div>
+<div class="section" id="v-0-15">
+<h2>v 0.15<a class="headerlink" href="#v-0-15" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Added distributed session support by using mongodb as the session store.</li>
+<li>Added code coverage proposal.</li>
+</ul>
+</div>
+<div class="section" id="v-0-14">
+<h2>v 0.14<a class="headerlink" href="#v-0-14" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Added support for containers.</li>
+<li>Implemented identity provider for user authentication.</li>
+<li>Cached resources based on locale.</li>
+</ul>
+</div>
+<div class="section" id="v-0-13">
+<h2>v 0.13<a class="headerlink" href="#v-0-13" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Added support for dynamic internationalization.</li>
+<li>Added language selector component.</li>
+<li>Implemented the platform logger based on the feature proposal.</li>
+<li>Added new RAIN SDK command for generating .po files.</li>
+</ul>
+</div>
+<div class="section" id="v-0-12">
+<h2>v 0.12<a class="headerlink" href="#v-0-12" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Added session / request objects in the data layer.</li>
+<li>Added support for CSS media queries in the CSS Handlebars helper.</li>
+<li>Added RAIN logger feature proposal.</li>
+<li>Refactored the RAIN SDK and made it modular.</li>
+</ul>
+</div>
+<div class="section" id="v-0-11">
+<h2>v 0.11<a class="headerlink" href="#v-0-11" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Added an article about Node&#8217;s best programming practices.</li>
+</ul>
+</div>
 <div class="section" id="v-0-10">
 <h2>v 0.10<a class="headerlink" href="#v-0-10" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Changed licensing model from MIT to BSD</li>
+<li>Changed licensing model from MIT to BSD.</li>
 </ul>
 </div>
 <div class="section" id="v-0-9">
@@ -111,6 +178,14 @@
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#v-0-18">v 0.18</a></li>
+<li><a class="reference internal" href="#v-0-17">v 0.17</a></li>
+<li><a class="reference internal" href="#v-0-16">v 0.16</a></li>
+<li><a class="reference internal" href="#v-0-15">v 0.15</a></li>
+<li><a class="reference internal" href="#v-0-14">v 0.14</a></li>
+<li><a class="reference internal" href="#v-0-13">v 0.13</a></li>
+<li><a class="reference internal" href="#v-0-12">v 0.12</a></li>
+<li><a class="reference internal" href="#v-0-11">v 0.11</a></li>
 <li><a class="reference internal" href="#v-0-10">v 0.10</a></li>
 <li><a class="reference internal" href="#v-0-9">v 0.9</a></li>
 <li><a class="reference internal" href="#v-0-8">v 0.8</a></li>
@@ -122,8 +197,8 @@
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="proposals/Features-proposal-view-modes.html"
-                        title="previous chapter">View modes</a></p>
+  <p class="topless"><a href="proposals/distributed_websockets.html"
+                        title="previous chapter">Distributed Websockets</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -148,9 +223,9 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="proposals/Features-proposal-view-modes.html" title="View modes"
+          <a href="proposals/distributed_websockets.html" title="Distributed Websockets"
              >previous</a> |</li>
-        <li><a href="index.html">Rain 0.10.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Rain 0.18.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

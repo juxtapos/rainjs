@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Component Helper &mdash; Rain 0.10.0 documentation</title>
+    <title>Component Helper &mdash; Rain 0.18.0 documentation</title>
     
     <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.10.0',
+        VERSION:     '0.18.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,8 +25,8 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="Rain 0.10.0 documentation" href="../../index.html" />
-    <link rel="next" title="CSS Helper" href="css_helper.html" />
+    <link rel="top" title="Rain 0.18.0 documentation" href="../../index.html" />
+    <link rel="next" title="CSS Helper" href="../handlebars/css_helper.html" />
     <link rel="prev" title="Component Versioning" href="../component_versioning.html" /> 
   </head>
   <body>
@@ -37,12 +37,12 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="css_helper.html" title="CSS Helper"
+          <a href="../handlebars/css_helper.html" title="CSS Helper"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="../component_versioning.html" title="Component Versioning"
              accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">Rain 0.10.0 documentation</a> &raquo;</li> 
+        <li><a href="../../index.html">Rain 0.18.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -61,10 +61,12 @@ inside the current component. It will generate a placeholder with an instanceId 
 <p>The following example shows a component helper with all the options specified (this aggregates the
 <em>index</em> view from the <em>button</em> component, version <em>1.1</em> and the static id for this component is set
 to <em>button1</em>):</p>
-<div class="highlight-python"><pre>{{component name="button" version="1.1" view="index" sid="button1"}}</pre>
+<div class="highlight-js"><div class="highlight"><pre><span class="p">{{</span><span class="nx">component</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="nx">version</span><span class="o">=</span><span class="s2">&quot;1.1&quot;</span> <span class="nx">view</span><span class="o">=</span><span class="s2">&quot;index&quot;</span> <span class="nx">sid</span><span class="o">=</span><span class="s2">&quot;button1&quot;</span><span class="p">}}</span>
+</pre></div>
 </div>
 <p>You can also aggregate a view from the current component as in the following example:</p>
-<div class="highlight-python"><pre>{{component view="index"}}</pre>
+<div class="highlight-js"><div class="highlight"><pre><span class="p">{{</span><span class="nx">component</span> <span class="nx">view</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">}}</span>
+</pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -79,24 +81,24 @@ through an example.</p>
 the html output. For the grouping page you must create a new view that uses the <tt class="docutils literal"><span class="pre">html</span></tt> key.
 This means the view must contain the following code: <tt class="docutils literal"><span class="pre">{{html}}</span></tt>.</p>
 <p>The developer that uses the group view can write his code like this:</p>
-<div class="highlight-python"><pre>{{#component name="button" view="group"}}
+<div class="highlight-js"><pre>{{#component name=&quot;button&quot; view=&quot;group&quot;}}
 
-    My first button: {{component name="button" view="index" sid="button1"}}
+    My first button: {{component name=&quot;button&quot; view=&quot;index&quot; sid=&quot;button1&quot;}}
 
-    &lt;div class="my_class"&gt;
-        My second button here: {{component name="button" view="index" sid="button2"}}
+    &lt;div class=&quot;my_class&quot;&gt;
+        My second button here: {{component name=&quot;button&quot; view=&quot;index&quot; sid=&quot;button2&quot;}}
     &lt;/div&gt;
 
 {{/component}}</pre>
 </div>
 <p>The <tt class="docutils literal"><span class="pre">group.html</span></tt> view can look like this:</p>
-<div class="highlight-python"><pre>Below is the html inserted from the body of the block element
+<div class="highlight-js"><pre>Below is the html inserted from the body of the block element
 
 &lt;div&gt;
     {{html}}
 &lt;/div&gt;
 
-{{component name="button" view="index" sid="mandatory_button_in_group"}}</pre>
+{{component name=&quot;button&quot; view=&quot;index&quot; sid=&quot;mandatory_button_in_group&quot;}}</pre>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -157,7 +159,7 @@ The error pages are views within the error component.</p>
   <p class="topless"><a href="../component_versioning.html"
                         title="previous chapter">Component Versioning</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="css_helper.html"
+  <p class="topless"><a href="../handlebars/css_helper.html"
                         title="next chapter">CSS Helper</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
@@ -183,12 +185,12 @@ The error pages are views within the error component.</p>
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="css_helper.html" title="CSS Helper"
+          <a href="../handlebars/css_helper.html" title="CSS Helper"
              >next</a> |</li>
         <li class="right" >
           <a href="../component_versioning.html" title="Component Versioning"
              >previous</a> |</li>
-        <li><a href="../../index.html">Rain 0.10.0 documentation</a> &raquo;</li> 
+        <li><a href="../../index.html">Rain 0.18.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

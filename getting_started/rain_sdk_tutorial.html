@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>RAIN SDK Tutorial &mdash; Rain 0.10.0 documentation</title>
+    <title>RAIN SDK Tutorial &mdash; Rain 0.18.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.10.0',
+        VERSION:     '0.18.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Rain 0.10.0 documentation" href="../index.html" />
+    <link rel="top" title="Rain 0.18.0 documentation" href="../index.html" />
     <link rel="next" title="RAIN component descriptor" href="../server/component_descriptor.html" />
-    <link rel="prev" title="RAIN Installation" href="installation.html" /> 
+    <link rel="prev" title="Installing RAIN" href="installation.html" /> 
   </head>
   <body>
     <div class="related">
@@ -40,9 +40,9 @@
           <a href="../server/component_descriptor.html" title="RAIN component descriptor"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="installation.html" title="RAIN Installation"
+          <a href="installation.html" title="Installing RAIN"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Rain 0.10.0 documentation</a> &raquo;</li> 
+        <li><a href="../index.html">Rain 0.18.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -54,94 +54,70 @@
   <div class="section" id="rain-sdk-tutorial">
 <h1>RAIN SDK Tutorial<a class="headerlink" href="#rain-sdk-tutorial" title="Permalink to this headline">¶</a></h1>
 <p>In this section you can find the tutorial for creating projects with RAIN SDK.
-Please read <a class="reference internal" href="installation.html"><em>RAIN Installation</em></a> before this.</p>
+Please read <a class="reference internal" href="installation.html"><em>Installing RAIN</em></a> before this.</p>
 <div class="section" id="rain-sdk-basic-usage">
 <h2>RAIN SDK Basic usage<a class="headerlink" href="#rain-sdk-basic-usage" title="Permalink to this headline">¶</a></h2>
+<p>RAIN gives the developer two commands:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">rain</span></tt> - used to create projects, components</li>
+<li><tt class="docutils literal"><span class="pre">raind</span></tt> - used to start the server</li>
+</ul>
 <p>Below you can find a bunch of useful commands to use:</p>
-<div class="highlight-python"><pre> rain --help
+<div class="highlight-js"><div class="highlight"><pre><span class="nx">rain</span> <span class="o">--</span><span class="nx">help</span>
+<span class="nx">raind</span> <span class="o">--</span><span class="nx">help</span>
 
- Usage: rain &lt;options&gt; &lt;command&gt;
-
-Commands:
-
-  create-project &lt;path&gt; &lt;project-name&gt;
-  create a project
-
-  create-component &lt;component-name&gt;
-  create a component
-
-  start [#pid]
-  start the server on project root
-
-  stop [#pid]
-  stop the associated server on project root
-  stop the server with the associated with the process id [#pid]
-
-  restart
-  restarts the associated server on project root
-
-  stopall
-  shutting down all server
-
-Options:
-
-  -h, --help                 output usage information
-  -V, --version              output the version number
-  -d, --debug                start the server with the node debugger
-                             server is NOT restarting on uncaught exceptions
-                             NOT working for windows
-
-  -c, --conf &lt;path_to_conf&gt;  start server with custom configuration
-  -n, --no-daemon            start server without daemon mode
-
-
-
-
-Examples:
-
-  $ rain create-project /home/username/workspace newProject
-
-  $ rain start
-  $ rain start -c /home/username/workspace/custom_confs/server.conf
-
-  $ rain stop
-  $ rain stop 5361
-
- Rain creates the following structure on first start of a server:
-
- /home/user/.rain</pre>
+<span class="nx">Usage</span><span class="o">:</span> <span class="nx">rain</span> <span class="o">&lt;</span><span class="nx">command</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nx">options</span><span class="o">&gt;</span>
+       <span class="nx">raind</span> <span class="o">&lt;</span><span class="nx">options</span><span class="o">&gt;</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="rain-sdk-create-project">
 <h2>RAIN SDK Create project<a class="headerlink" href="#rain-sdk-create-project" title="Permalink to this headline">¶</a></h2>
-<p>You can easily used rain sdk to create projects and components. To create a new project
+<p>You can easily use RAIN SDK to create projects and components. To create a new project
 execute the following commands:</p>
-<blockquote>
-<div><ol class="arabic simple">
+<ol class="arabic simple">
 <li>Go to you workspace folder</li>
-<li>rain create-project . &lt;project-name&gt;</li>
-<li>Just answer the question you are prompted and everything is ready.</li>
+<li>rain create-project &lt;project-name&gt;</li>
 <li>cd &lt;project-name&gt;</li>
-<li>rain start</li>
+<li>raind</li>
 </ol>
-</div></blockquote>
 <p>Now you have your first RAIN project.
-Try the following url in your browser: <a class="reference external" href="http://localhost:1337">http://localhost:1337</a>/&lt;component-name&gt;/&lt;view-id&gt;.</p>
+Try the following url in your browser: <a class="reference external" href="http://localhost:1337/hello_world/index">http://localhost:1337/hello_world/index</a>.</p>
 </div>
 <div class="section" id="rain-sdk-debug-mode">
 <h2>RAIN SDK Debug mode<a class="headerlink" href="#rain-sdk-debug-mode" title="Permalink to this headline">¶</a></h2>
-<p>Rain provides a debug mode for the server-side. You only have to start / restart the server
-with &#8211;debug. It automatically connects the nodejs native debugger with the port 5858.</p>
-<p>If you want to use a graphical debugger then you can install &#8220;node-inspector&#8221;.
-It&#8217;s a node package manager module.</p>
-<dl class="docutils">
-<dt>For Linux::</dt>
-<dd>sudo npm install node-inspector -g</dd>
-<dt>For Windows::</dt>
-<dd>npm install node-inspector -g</dd>
-</dl>
+<p>RAIN provides a debug mode for the server-side. You only have to start the server with &#8211;debug.
+It automatically connects the Node native debugger with the port 5858.</p>
+<p>If you want to use a graphical debugger then you can install the &#8220;node-inspector&#8221; NPM module.</p>
+<p>For Linux:</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="nx">sudo</span> <span class="nx">npm</span> <span class="nx">install</span> <span class="nx">node</span><span class="o">-</span><span class="nx">inspector</span> <span class="o">-</span><span class="nx">g</span>
+</pre></div>
+</div>
+<p>For Windows:</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">node</span><span class="o">-</span><span class="nx">inspector</span> <span class="o">-</span><span class="nx">g</span>
+</pre></div>
+</div>
 <p>Now start the node-inspector in the command line with <tt class="docutils literal"><span class="pre">node-inspector</span></tt> and you can access
 the debugger with <a class="reference external" href="http://localhost:8080">http://localhost:8080</a>.</p>
+</div>
+<div class="section" id="rain-sdk-generate-localization-files-from-source">
+<h2>RAIN SDK Generate Localization files from source<a class="headerlink" href="#rain-sdk-generate-localization-files-from-source" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>RAIN SDK</strong> provides a method to generate localization files by parsing the sources for
+the components, and generating <tt class="docutils literal"><span class="pre">.po</span></tt> for the specified locale through the <tt class="docutils literal"><span class="pre">rain</span> <span class="pre">generate-po-files</span></tt>
+command.</p>
+<p>This command parses the translation ids used inside components and generates apropriate <tt class="docutils literal"><span class="pre">.po</span></tt> files
+inside the components <tt class="docutils literal"><span class="pre">locale</span></tt> folders that can be later translated.</p>
+<p>Usage:</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="nx">$</span> <span class="nx">rain</span> <span class="nx">generate</span><span class="o">-</span><span class="nx">po</span><span class="o">-</span><span class="nx">files</span> <span class="o">&lt;</span><span class="nx">output</span><span class="o">-</span><span class="nx">locales</span><span class="o">&gt;</span> <span class="p">[</span><span class="nx">component</span><span class="o">-</span><span class="nx">id</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-js"><pre># generate en_GB and de_DE po files for all components
+$ rain generate-po-files &quot;en_GB,de_DE&quot;
+
+# generate en_GB .po files for the example component, version 1.0
+$ rain generate-po-files &quot;en_GB&quot; &quot;example;1.0&quot;</pre>
+</div>
 </div>
 </div>
 
@@ -157,13 +133,14 @@ the debugger with <a class="reference external" href="http://localhost:8080">htt
 <li><a class="reference internal" href="#rain-sdk-basic-usage">RAIN SDK Basic usage</a></li>
 <li><a class="reference internal" href="#rain-sdk-create-project">RAIN SDK Create project</a></li>
 <li><a class="reference internal" href="#rain-sdk-debug-mode">RAIN SDK Debug mode</a></li>
+<li><a class="reference internal" href="#rain-sdk-generate-localization-files-from-source">RAIN SDK Generate Localization files from source</a></li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="installation.html"
-                        title="previous chapter">RAIN Installation</a></p>
+                        title="previous chapter">Installing RAIN</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="../server/component_descriptor.html"
                         title="next chapter">RAIN component descriptor</a></p>
@@ -194,9 +171,9 @@ the debugger with <a class="reference external" href="http://localhost:8080">htt
           <a href="../server/component_descriptor.html" title="RAIN component descriptor"
              >next</a> |</li>
         <li class="right" >
-          <a href="installation.html" title="RAIN Installation"
+          <a href="installation.html" title="Installing RAIN"
              >previous</a> |</li>
-        <li><a href="../index.html">Rain 0.10.0 documentation</a> &raquo;</li> 
+        <li><a href="../index.html">Rain 0.18.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

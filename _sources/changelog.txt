@@ -3,10 +3,77 @@ Changelog
 =========
 
 ------
+v 0.18
+------
+
++ Client-side component dependencies can be requested using the ``js/path/file_without_extension``
+  convention (example: ``js/file``, ``js/lib/file``). The previous way of requesting js files
+  (``/component/optional_version/js/file.js``) still works but it's not recommended.
++ Removed the ``util`` shortcut from the RequireJS paths. In order to use the ``util`` library you
+  should request it using ``raintime/lib/util``.
++ Fixed a bug where a component added to the page using ``context.insert`` could not be found.
+
+------
+v 0.17
+------
+
++ Added distributed rendering research.
++ Added improved CSS rendering research.
++ Improved the AsyncController methods and made all controllers inherit its methods.
+
+------
+v 0.16
+------
+
++ Fixed CSS files not loading in IE8.
++ Added logger implementation for components and for client side.
++ Added code coverage support as additional Jake commands.
++ Added distributed websockets proposal.
+
+------
+v 0.15
+------
+
++ Added distributed session support by using mongodb as the session store.
++ Added code coverage proposal.
+
+------
+v 0.14
+------
+
++ Added support for containers.
++ Implemented identity provider for user authentication.
++ Cached resources based on locale.
+
+------
+v 0.13
+------
+
++ Added support for dynamic internationalization.
++ Added language selector component.
++ Implemented the platform logger based on the feature proposal.
++ Added new RAIN SDK command for generating .po files.
+
+------
+v 0.12
+------
+
++ Added session / request objects in the data layer.
++ Added support for CSS media queries in the CSS Handlebars helper.
++ Added RAIN logger feature proposal.
++ Refactored the RAIN SDK and made it modular.
+
+------
+v 0.11
+------
+
++ Added an article about Node's best programming practices.
+
+------
 v 0.10
 ------
 
-+ Changed licensing model from MIT to BSD
++ Changed licensing model from MIT to BSD.
 
 -----
 v 0.9

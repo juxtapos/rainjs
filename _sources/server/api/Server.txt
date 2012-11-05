@@ -39,6 +39,65 @@ Constructor
 
 
 
+Methods
+-------
+
+..
+   class-methods
+
+
+close
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. js:function:: Server#close([error])
+
+
+    
+    :param Error error: 
+        the error that triggered the shutdown (if any) 
+    
+
+
+
+
+Softly shuts down the server closing any open pipes and connections.
+
+
+
+
+
+
+
+
+
+    
+
+
+
+start
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. js:function:: Server#start()
+
+
+
+
+
+Starts the server.
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
     
 
 Attributes

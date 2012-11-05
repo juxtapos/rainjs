@@ -3,98 +3,79 @@ RAIN SDK Tutorial
 =================
 
 In this section you can find the tutorial for creating projects with RAIN SDK.
-Please read :doc:`/getting_started/installation` before this.
+Please read :doc:`installation` before this.
 
 --------------------
 RAIN SDK Basic usage
 --------------------
 
+RAIN gives the developer two commands:
+
+- ``rain`` - used to create projects, components
+- ``raind`` - used to start the server
+
 Below you can find a bunch of useful commands to use::
 
-   rain --help
+    rain --help
+    raind --help
 
-   Usage: rain <options> <command>
-
-  Commands:
-
-    create-project <path> <project-name>
-    create a project
-
-    create-component <component-name>
-    create a component
-
-    start [#pid]
-    start the server on project root
-
-    stop [#pid]
-    stop the associated server on project root
-    stop the server with the associated with the process id [#pid]
-
-    restart
-    restarts the associated server on project root
-
-    stopall
-    shutting down all server
-
-  Options:
-
-    -h, --help                 output usage information
-    -V, --version              output the version number
-    -d, --debug                start the server with the node debugger
-    			       server is NOT restarting on uncaught exceptions
-    			       NOT working for windows
-
-    -c, --conf <path_to_conf>  start server with custom configuration
-    -n, --no-daemon            start server without daemon mode
-
-
-
-
-  Examples:
-
-    $ rain create-project /home/username/workspace newProject
-
-    $ rain start
-    $ rain start -c /home/username/workspace/custom_confs/server.conf
-
-    $ rain stop
-    $ rain stop 5361
-
-   Rain creates the following structure on first start of a server:
-
-   /home/user/.rain 
+    Usage: rain <command> <options>
+           raind <options>
 
 -----------------------
 RAIN SDK Create project
 -----------------------
 
-You can easily used rain sdk to create projects and components. To create a new project
+You can easily use RAIN SDK to create projects and components. To create a new project
 execute the following commands:
 
-   #. Go to you workspace folder
-   #. rain create-project . <project-name>
-   #. Just answer the question you are prompted and everything is ready.
-   #. cd <project-name>
-   #. rain start
+#. Go to you workspace folder
+#. rain create-project <project-name>
+#. cd <project-name>
+#. raind
 
 Now you have your first RAIN project.
-Try the following url in your browser: http://localhost:1337/<component-name>/<view-id>.
+Try the following url in your browser: http://localhost:1337/hello_world/index.
 
 -------------------
 RAIN SDK Debug mode
 -------------------
 
-Rain provides a debug mode for the server-side. You only have to start / restart the server
-with --debug. It automatically connects the nodejs native debugger with the port 5858.
+RAIN provides a debug mode for the server-side. You only have to start the server with --debug.
+It automatically connects the Node native debugger with the port 5858.
 
-If you want to use a graphical debugger then you can install "node-inspector".
-It's a node package manager module.
+If you want to use a graphical debugger then you can install the "node-inspector" NPM module.
 
 For Linux::
-  sudo npm install node-inspector -g
+
+    sudo npm install node-inspector -g
 
 For Windows::
-  npm install node-inspector -g
+
+    npm install node-inspector -g
 
 Now start the node-inspector in the command line with ``node-inspector`` and you can access
 the debugger with http://localhost:8080.
+
+------------------------------------------------
+RAIN SDK Generate Localization files from source
+------------------------------------------------
+
+The **RAIN SDK** provides a method to generate localization files by parsing the sources for
+the components, and generating ``.po`` for the specified locale through the ``rain generate-po-files``
+command.
+
+This command parses the translation ids used inside components and generates apropriate ``.po`` files
+inside the components ``locale`` folders that can be later translated.
+
+Usage::
+
+    $ rain generate-po-files <output-locales> [component-id]
+
+Example::
+
+    # generate en_GB and de_DE po files for all components
+    $ rain generate-po-files "en_GB,de_DE"
+
+    # generate en_GB .po files for the example component, version 1.0
+    $ rain generate-po-files "en_GB" "example;1.0" 
